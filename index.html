@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #001f3f;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      color: #00bfff;
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    section {
+      padding: 60px 40px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, #000428, #004e92);
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #00bfff;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      max-width: 600px;
+    }
+
+    .btn {
+      background-color: #00bfff;
+      color: #000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #009acd;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #00bfff;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 20px;
+    }
+
+    .project-card h3 {
+      color: #00bfff;
+      margin-bottom: 10px;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #00bfff;
+      font-weight: bold;
+    }
+
+    .resume-download {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .about, .contact {
+      background-color: #0d0d0d;
+      border-top: 2px solid #001f3f;
+    }
+
+    .about p, .contact p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #001f3f;
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .project-card img {
+        height: 150px;
+      }
+    }
+
+    /*about me css*/
+    .about {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #111;
+  color: #eee;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #00aaff;
+  margin-bottom: 50px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-areas:
+    "topleft topright"
+    "bottomleft bottomright";
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.corner {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  text-align: left;
+  font-size: 1rem;
+}
+
+.top-left    { grid-area: topleft;    }
+.top-right   { grid-area: topright;   }
+.bottom-left { grid-area: bottomleft; }
+.bottom-right{ grid-area: bottomright;}
+
+.center-text {
+  grid-column: 1 / -1;
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*css for contact section*/
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #00bfff);
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- <section class="hero" id="home">
+    <h2>Hello, I'm a Web Developer</h2>
+    <p>I specialize in building modern, responsive websites and web applications using HTML, CSS, and JavaScript.</p>
+    <a href="assets/resume.pdf" download class="btn">Download Resume</a>
+  </section> -->
+
+  <!-- Home Section -->
+<section id="home" style="background: linear-gradient(to right, #0f0f0f, #1a1a2e); color: white; display: flex; align-items: center; justify-content: space-between; padding: 60px 10%; min-height: 100vh;">
+  <!-- Text Content -->
+  <div style="flex: 1; animation: slideInLeft 1s ease-out;">
+    <h1 style="font-size: 3rem; color: #00aaff;">Hi, I'm <span style="color: #00ffd5;">Narasimha Manam</span></h1>
+    <h2 style="font-size: 1.5rem; color: #cccccc;">Age: 21</h2>
+    <p style="margin-top: 20px; font-size: 1.1rem; color: #aaaaaa;">
+      Passionate Full-Stack Developer crafting responsive, modern web applications with a focus on user experience.
+    </p>
+  </div>
+
+  <!-- Profile Image -->
+  <div style="flex: 1; display: flex; justify-content: center; animation: slideInRight 1s ease-out;">
+    <img src="images/pp without bg.jpg" alt="Profile Image" style="width: 400px; height: 300px; border-radius: 50%; background: none; box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);" />
+  </div>
+</section>
+
+<!-- Animations -->
+<style>
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+</style>
+
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="images/project1.png" alt="Project 1">
+        <div class="content">
+          <h3>Interactive Quiz Portal</h3>
+          <a href="https://lnkd.in/efNstqwH" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project2.png" alt="Project 2">
+        <div class="content">
+          <h3>Landing page</h3>
+          <a href=" https://lnkd.in/e_MCm8qK" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project3.png" alt="Project 3">
+        <div class="content">
+          <h3>Personal Portfolio</h3>
+          <a href=" https://lnkd.in/ee9ryrmW" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project4.png" alt="Project 4">
+        <div class="content">
+          <h3>Business Portfolio</h3>
+          <a href="https://github.com/Narasimhamanam/freelancing-portfolio.git" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+        <div class="project-card">
+          <img src="images/project5.png" alt="Project 5">
+          <div class="content">
+            <h3>Resume Builder</h3>
+            <a href="https://github.com/Narasimhamanam/ResumeBuilder.git" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+        
+    </div>
+     <div class="project-reflection" style="margin-top: 60px; text-align: center; color: #ccc; font-size: 1.1rem; line-height: 1.8;">
+    <p>
+      Working on these projects has significantly enhanced my skills in web development, UI/UX design, and real-world problem-solving.  
+      Each challenge helped me grow as a developer and improved my ability to think creatively and critically.
+    </p>
+    <p>
+      If you’d like to contribute to or extend any of these projects, I’d love to collaborate!  
+      Feel free to reach out via GitHub or LinkedIn using the icons below:
+    </p>
+    <div style="margin-top: 20px;">
+      <a href="https://github.com/Narasimhamanam" target="_blank" style="margin: 0 15px;">
+        <img src="images/githublogo.png" alt="GitHub" width="40" height="40">
+      </a>
+      <a href="https://www.linkedin.com/in/narasimha-manam-032a9634b" target="_blank" style="margin: 0 15px;">
+        <img src="images/linkedinlogo.png" alt="LinkedIn" width="70" height="40">
+      </a>
+    </div>
+  </div>
+  </section>
+
+  <!-- <section class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I’m a passionate front-end developer with experience in creating responsive and accessible websites. I enjoy turning complex problems into simple, beautiful designs.
+    </p>
+  </section> -->
+  <section class="about" id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="corner top-left">
+      <p>I’m a passionate front-end developer who loves building intuitive and responsive UIs using modern tools and clean design patterns.</p>
+    </div>
+    <div class="corner top-right">
+      <p>I began my coding journey out of curiosity, which quickly evolved into a deep passion and consistent learning across real-world projects.</p>
+    </div>
+    <div class="center-text">
+      <p>With each line of code, I aim to create meaningful experiences and continuously strive to become a better developer and collaborator.</p>
+    </div>
+    <div class="corner bottom-left">
+      <p>Outside of work, I enjoy design research, UI/UX inspiration, exploring dev tools, and sometimes just unwinding with tech videos.</p>
+    </div>
+    <div class="corner bottom-right">
+      <p>If you're excited to collaborate or explore new ideas, feel free to connect via GitHub or LinkedIn — I'm always open to creative teamwork.</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- <section class="contact" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>You can reach me at <a href="mailto:youremail@example.com" style="color:#00bfff;">youremail@example.com</a></p>
+  </section> -->
+
+  <section class="contact" id="contact">
+  <h2 class="section-title">Contact</h2>
+  <!-- <p>You can reach me at 
+    <a href="mailto:narasimhamanam6014@gmail.com" style="color:#00bfff;">youremail@example.com</a>
+  </p> -->
+  
+  <div class="social-icons">
+    <a href="https://github.com/Narasimhamanam" target="_blank" title="GitHub">
+      <img src="images/githublogo.png" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/narasimha-manam-032a9634b" target="_blank" title="LinkedIn">
+      <img src="images/linkedinlogo.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/narasimhachowdary_" target="_blank" title="Instagram">
+      <img src="images/instagram.png" alt="Instagram">
+    </a>
+    <a href="mailto:narasimhamanam6014@gmail.com" title="Email">
+      <img src="images/gmail.png" alt="Email">
+    </a>
+    <a href="https://wa.me/7386464170" target="_blank" title="WhatsApp">
+      <img src="images/whatsapp.png" alt="WhatsApp">
+    </a>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 My Portfolio. All rights reserved by Narasimha Manam</p>
+  </footer>
+
+</body>
+</html>
