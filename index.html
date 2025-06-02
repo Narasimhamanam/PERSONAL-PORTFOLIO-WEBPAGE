@@ -6,6 +6,23 @@
   <title>My Developer Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      #home {
+        flex-direction: column;
+        text-align: center;
+      }
+      #home img {
+        margin-top: 30px;
+      }
+      .about-grid {
+        grid-template-areas: "topleft" "topright" "bottomleft" "bottomright";
+        justify-items: center;
+      }
+    }
     * {
       margin: 0;
       padding: 0;
