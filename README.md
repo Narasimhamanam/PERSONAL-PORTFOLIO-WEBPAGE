@@ -94,3 +94,6 @@ This portfolio is created for educational and internship purposes. Feel free to 
 //OUTPUT
 
 ![Image](https://github.com/user-attachments/assets/3a9db8e9-f969-4046-9a44-38fdf9edb0f5)
+![Image](https://github.com/user-attachments/assets/291e74c3-b447-4a7a-be2f-fa16fd4e9c2d)
+![Image](https://github.com/user-attachments/assets/649568ff-2e47-4ef4-bd89-c1b5cd671692)
+![Image](https://github.com/user-attachments/assets/efb13ac3-2b4a-4425-8259-03414c37d9da)
